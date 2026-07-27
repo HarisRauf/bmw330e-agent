@@ -1,4 +1,4 @@
-from core.database import Database
+from core.storage import Storage
 from core.filters import matches
 from core.telegram import notify
 from scrapers.nettiauto import NettiautoScraper
@@ -6,7 +6,7 @@ from scrapers.nettiauto import NettiautoScraper
 
 def main():
 
-    db = Database("data/cars.db")
+    storage = Storage()
 
     scraper = NettiautoScraper()
 
@@ -33,7 +33,7 @@ def main():
         matching += 1
         print("✅ Matches filter")
 
-        if db.exists(car.listing_id):
+        if storage.exists(car.listing_id):
             print("⚠ Already in database")
             continue
 
@@ -41,7 +41,7 @@ def main():
 
         new += 1
 
-        db.insert(car)
+        storage.add(car.listing_id)
 
         message = f"""
 🚗 New BMW 330e Found!
