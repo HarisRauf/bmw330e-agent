@@ -1,0 +1,4 @@
+playwright
+selectolax
+python-dotenv
+python-telegram-bot

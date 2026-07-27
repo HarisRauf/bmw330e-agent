@@ -1,0 +1,31 @@
+searches:
+  - name: BMW330e
+
+    model: "BMW 330e"
+    body_type: "Sedan"
+
+    max_price: 20000
+    min_year: 2019
+    max_mileage: 120000
+
+    transmission: "Automatic"
+    fuel: "Plug-in Hybrid"
+
+    location: "Finland"
+
+    websites:
+      - nettiauto
+      - kamux
+      - saka
+      - kauto
+      - rintajouppi
+      - bilar99e
+
+notifications:
+  telegram: true
+
+database:
+  path: data/cars.db
+
+scheduler:
+  interval_minutes: 60
