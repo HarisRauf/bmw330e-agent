@@ -3,6 +3,7 @@ from core.filters import matches
 from core.telegram import notify
 from scrapers.nettiauto import NettiautoScraper
 from scrapers.saka import SakaScraper
+from scrapers.rintajouppi import RintaJouppiScraper
 
 
 def main():
@@ -13,6 +14,7 @@ def main():
 
     cars.extend(NettiautoScraper().search())
     cars.extend(SakaScraper().search())
+    cars.extend(RintaJouppiScraper().search())
 
     print(f"\nTotal scraped: {len(cars)}")
 
