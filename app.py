@@ -2,15 +2,17 @@ from core.storage import Storage
 from core.filters import matches
 from core.telegram import notify
 from scrapers.nettiauto import NettiautoScraper
+from scrapers.saka import SakaScraper
 
 
 def main():
 
     storage = Storage()
 
-    scraper = NettiautoScraper()
+    cars = []
 
-    cars = scraper.search()
+    cars.extend(NettiautoScraper().search())
+    cars.extend(SakaScraper().search())
 
     print(f"\nTotal scraped: {len(cars)}")
 
